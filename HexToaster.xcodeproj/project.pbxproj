@@ -176,9 +176,11 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 8250AE00097EA7A100CB08AD /* Build configuration list for PBXProject "HexToaster" */;
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* HexToaster */;
 			projectDirPath = "";
+			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* HexToaster */,
 			);
@@ -257,7 +259,6 @@
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				MACOSX_DEPLOYMENT_TARGET = 10.2;
-				OPTIMIZATION_CFLAGS = "-O0";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-read_only_relocs",
@@ -361,6 +362,8 @@
 					ppc,
 					i386,
 				);
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 			};
 			name = Development;
 		};
@@ -371,6 +374,8 @@
 					ppc,
 					i386,
 				);
+				HEADER_SEARCH_PATHS = "";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
 			name = Deployment;
 		};
@@ -381,6 +386,8 @@
 					ppc,
 					i386,
 				);
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
 			};
 			name = Default;
 		};

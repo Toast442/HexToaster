@@ -1,33 +1,75 @@
-{
-    IBClasses = (
-        {CLASS = FirstResponder; LANGUAGE = ObjC; SUPERCLASS = NSObject; }, 
-        {
-            ACTIONS = {baseChanged = id; setCalc = id; setMode = id; }; 
-            CLASS = HTController; 
-            LANGUAGE = ObjC; 
-            OUTLETS = {
-                baseField1 = id; 
-                baseField2 = id; 
-                baseField3 = id; 
-                baseField4 = id; 
-                baseField5 = id; 
-                baseField6 = id; 
-                baseField7 = id; 
-                baseField8 = id; 
-                baseMenu1 = id; 
-                baseMenu2 = id; 
-                baseMenu3 = id; 
-                baseMenu4 = id; 
-                baseMenu5 = id; 
-                baseMenu6 = id; 
-                baseMenu7 = id; 
-                baseMenu8 = id; 
-                functionMatrix = id; 
-                modeButton = id; 
-            }; 
-            SUPERCLASS = NSObject; 
-        }, 
-        {CLASS = HTFormatter; LANGUAGE = ObjC; SUPERCLASS = NSFormatter; }
-    ); 
-    IBVersion = 1; 
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IBClasses</key>
+	<array>
+		<dict>
+			<key>CLASS</key>
+			<string>FirstResponder</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+		<dict>
+			<key>ACTIONS</key>
+			<dict>
+				<key>baseChanged</key>
+				<string>id</string>
+				<key>setCalc</key>
+				<string>id</string>
+				<key>setMode</key>
+				<string>id</string>
+			</dict>
+			<key>CLASS</key>
+			<string>HTController</string>
+			<key>LANGUAGE</key>
+			<string>ObjC</string>
+			<key>OUTLETS</key>
+			<dict>
+				<key>baseField1</key>
+				<string>id</string>
+				<key>baseField2</key>
+				<string>id</string>
+				<key>baseField3</key>
+				<string>id</string>
+				<key>baseField4</key>
+				<string>id</string>
+				<key>baseField5</key>
+				<string>id</string>
+				<key>baseField6</key>
+				<string>id</string>
+				<key>baseField7</key>
+				<string>id</string>
+				<key>baseField8</key>
+				<string>id</string>
+				<key>baseMenu1</key>
+				<string>id</string>
+				<key>baseMenu2</key>
+				<string>id</string>
+				<key>baseMenu3</key>
+				<string>id</string>
+				<key>baseMenu4</key>
+				<string>id</string>
+				<key>baseMenu5</key>
+				<string>id</string>
+				<key>baseMenu6</key>
+				<string>id</string>
+				<key>baseMenu7</key>
+				<string>id</string>
+				<key>baseMenu8</key>
+				<string>id</string>
+				<key>functionMatrix</key>
+				<string>id</string>
+				<key>modeButton</key>
+				<string>id</string>
+			</dict>
+			<key>SUPERCLASS</key>
+			<string>NSObject</string>
+		</dict>
+	</array>
+	<key>IBVersion</key>
+	<string>1</string>
+</dict>
+</plist>

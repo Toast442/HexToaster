@@ -11,10 +11,13 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Deployment;
 		activeExecutable = 825FF27F05C5754C004026BF /* HexToaster */;
+		activeSDKPreference = macosx10.4;
 		activeTarget = 8D1107260486CEB800E47090 /* HexToaster */;
 		breakpoints = (
 			82C040FA05C794F900CE52F1 /* HTController.m:87 */,
 			828C780905CCACF8000E929E /* HTController.m:271 */,
+			8215EBBF0CE5288B00F2E7C6 /* HTController.m:404 */,
+			8215EBCB0CE528F100F2E7C6 /* HTController.m:234 */,
 		);
 		codeSenseManager = 825FF28B05C57551004026BF /* Code sense */;
 		executables = (
@@ -54,7 +57,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXExecutablesDataSource_NameID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					22,
-					433,
+					556,
 				);
 				PBXFileTableDataSourceColumnsKey = (
 					PBXExecutablesDataSource_ActiveFlagID,
@@ -66,7 +69,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					516,
+					364,
 					20,
 					48,
 					43,
@@ -140,8 +143,8 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					210,
-					50,
+					322,
+					60,
 					20,
 					50,
 					43,
@@ -157,7 +160,7 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 211477358;
+			PBXPerProjectTemplateStateSaveDate = 259777025;
 			PBXPrepackagedSmartGroups_v2 = (
 				{
 					PBXTransientLocationAtTop = bottom;
@@ -676,7 +679,13 @@
 				PBXModuleWindowStatusBarHidden = YES;
 				RubberWindowFrame = "242 350 745 464 0 0 1280 832 ";
 			};
-			PBXWorkspaceStateSaveDate = 211477358;
+			PBXWorkspaceStateSaveDate = 259777025;
+		};
+		perUserProjectItems = {
+			825107390F7BE22C007E1F24 /* PBXTextBookmark */ = 825107390F7BE22C007E1F24 /* PBXTextBookmark */;
+			825107490F7BE3E0007E1F24 /* PBXTextBookmark */ = 825107490F7BE3E0007E1F24 /* PBXTextBookmark */;
+			82DFCEDF0F7BE1F500DB99F1 /* PBXTextBookmark */ = 82DFCEDF0F7BE1F500DB99F1 /* PBXTextBookmark */;
+			82DFCEE00F7BE1F500DB99F1 /* PBXTextBookmark */ = 82DFCEE00F7BE1F500DB99F1 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 825FF28A05C57551004026BF /* Source Control */;
 		userBuildSettings = {
@@ -684,9 +693,11 @@
 	};
 	29B97316FDCFA39411CA2CEA /* main.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {641, 598}}";
+			sepNavIntBoundsRect = "{{0, 0}, {907, 509}}";
 			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 257}";
 			sepNavVisRect = "{{0, 0}, {641, 598}}";
+			sepNavWindowFrame = "{{61, 344}, {966, 637}}";
 		};
 	};
 	8206408E05C44C8C00AD0F0B /* HTController.h */ = {
@@ -698,10 +709,11 @@
 	};
 	8206408F05C44C8C00AD0F0B /* HTController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {711, 5894}}";
-			sepNavSelRange = "{5835, 12}";
+			sepNavIntBoundsRect = "{{0, 0}, {817, 5768}}";
+			sepNavSelRange = "{1014, 0}";
+			sepNavVisRange = "{301, 1800}";
 			sepNavVisRect = "{{0, 2957}, {711, 429}}";
-			sepNavWindowFrame = "{{15, 315}, {750, 558}}";
+			sepNavWindowFrame = "{{2, 150}, {876, 878}}";
 		};
 	};
 	8206409205C44C9800AD0F0B /* HTFormatter.h */ = {
@@ -713,8 +725,9 @@
 	};
 	8206409305C44C9800AD0F0B /* HTFormatter.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {674, 1119}}";
-			sepNavSelRange = "{546, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {817, 1120}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1489}";
 			sepNavVisRect = "{{0, 198}, {641, 598}}";
 		};
 	};
@@ -739,14 +752,66 @@
 			sepNavWindowFrame = "{{15, 269}, {750, 558}}";
 		};
 	};
+	8215EBBF0CE5288B00F2E7C6 /* HTController.m:404 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 8206408F05C44C8C00AD0F0B /* HTController.m */;
+		functionName = "-setMode:";
+		hitCount = 3;
+		ignoreCount = 0;
+		lineNumber = 404;
+		location = HexToaster;
+		modificationTime = 216345087.176526;
+		state = 0;
+	};
+	8215EBCB0CE528F100F2E7C6 /* HTController.m:234 */ = {
+		isa = PBXFileBreakpoint;
+		actions = (
+		);
+		breakpointStyle = 0;
+		continueAfterActions = 0;
+		countType = 0;
+		delayBeforeContinue = 0;
+		fileReference = 8206408F05C44C8C00AD0F0B /* HTController.m */;
+		functionName = "-updateCalculator";
+		hitCount = 0;
+		ignoreCount = 0;
+		lineNumber = 234;
+		location = HexToaster;
+		modificationTime = 216344894.665311;
+		state = 2;
+	};
+	825107390F7BE22C007E1F24 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "error: gmp.h: No such file or directory";
+		fRef = 8206408F05C44C8C00AD0F0B /* HTController.m */;
+		rLen = 1;
+		rLoc = 28;
+		rType = 1;
+	};
+	825107490F7BE3E0007E1F24 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8206408F05C44C8C00AD0F0B /* HTController.m */;
+		name = "HTController.m: 29";
+		rLen = 0;
+		rLoc = 1014;
+		rType = 0;
+		vrLen = 1800;
+		vrLoc = 301;
+	};
 	825FF27F05C5754C004026BF /* HexToaster */ = {
 		isa = PBXExecutable;
-		activeArgIndex = 2147483647;
 		activeArgIndices = (
 		);
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
@@ -760,8 +825,12 @@
 		executableUserSymbolLevel = 0;
 		libgmallocEnabled = 0;
 		name = HexToaster;
+		savedGlobals = {
+		};
 		sourceDirectories = (
 		);
+		variableFormatDictionary = {
+		};
 	};
 	825FF28A05C57551004026BF /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -781,12 +850,15 @@
 		);
 		breakpointStyle = 0;
 		continueAfterActions = 0;
+		countType = 0;
 		delayBeforeContinue = 0;
 		fileReference = 8206408F05C44C8C00AD0F0B /* HTController.m */;
 		hitCount = 0;
+		ignoreCount = 0;
 		lineNumber = 271;
-		modificationTime = 0;
-		state = 1;
+		location = HexToaster;
+		modificationTime = 216344894.665233;
+		state = 0;
 	};
 	82C040FA05C794F900CE52F1 /* HTController.m:87 */ = {
 		isa = PBXFileBreakpoint;
@@ -794,13 +866,36 @@
 		);
 		breakpointStyle = 0;
 		continueAfterActions = 0;
+		countType = 0;
 		delayBeforeContinue = 0;
 		fileReference = 8206408F05C44C8C00AD0F0B /* HTController.m */;
 		functionName = "-convertToBase:fromBase:usingText:";
 		hitCount = 0;
+		ignoreCount = 0;
 		lineNumber = 87;
-		modificationTime = 0;
-		state = 1;
+		location = HexToaster;
+		modificationTime = 216344894.665179;
+		state = 0;
+	};
+	82DFCEDF0F7BE1F500DB99F1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8206409305C44C9800AD0F0B /* HTFormatter.m */;
+		name = "HTFormatter.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1489;
+		vrLoc = 0;
+	};
+	82DFCEE00F7BE1F500DB99F1 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8206409305C44C9800AD0F0B /* HTFormatter.m */;
+		name = "HTFormatter.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1489;
+		vrLoc = 0;
 	};
 	8D1107260486CEB800E47090 /* HexToaster */ = {
 		activeExec = 0;
