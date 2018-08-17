@@ -25,21 +25,21 @@
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = main.m; path = HexToaster/main.m; sourceTree = SOURCE_ROOT; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		32CA4F630368D1EE00C91783 /* HexToaster_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexToaster_Prefix.pch; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* HexToaster_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HexToaster_Prefix.pch; path = HexToaster/HexToaster_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		8206408805C4498F00AD0F0B /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
-		8206408E05C44C8C00AD0F0B /* HTController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = HTController.h; sourceTree = "<group>"; };
-		8206408F05C44C8C00AD0F0B /* HTController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = HTController.m; sourceTree = "<group>"; };
-		8206409205C44C9800AD0F0B /* HTFormatter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = HTFormatter.h; sourceTree = "<group>"; };
-		8206409305C44C9800AD0F0B /* HTFormatter.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = HTFormatter.m; sourceTree = "<group>"; };
-		8206410905C47B7B00AD0F0B /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		8206410B05C4841C00AD0F0B /* HTIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = HTIcon.icns; sourceTree = "<group>"; };
+		8206408E05C44C8C00AD0F0B /* HTController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = HTController.h; path = HexToaster/HTController.h; sourceTree = SOURCE_ROOT; };
+		8206408F05C44C8C00AD0F0B /* HTController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = HTController.m; path = HexToaster/HTController.m; sourceTree = SOURCE_ROOT; };
+		8206409205C44C9800AD0F0B /* HTFormatter.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = HTFormatter.h; path = HexToaster/HTFormatter.h; sourceTree = SOURCE_ROOT; };
+		8206409305C44C9800AD0F0B /* HTFormatter.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = HTFormatter.m; path = HexToaster/HTFormatter.m; sourceTree = SOURCE_ROOT; };
+		8206410905C47B7B00AD0F0B /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Credits.rtf; path = HexToaster/Credits.rtf; sourceTree = SOURCE_ROOT; };
+		8206410B05C4841C00AD0F0B /* HTIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = HTIcon.icns; path = HexToaster/HTIcon.icns; sourceTree = SOURCE_ROOT; };
 		8206C08505C4CE3800D3EDA3 /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = COPYING.txt; sourceTree = "<group>"; };
-		82131722212639D5006D1E52 /* HexToaster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HexToaster.entitlements; sourceTree = "<group>"; };
+		82131722212639D5006D1E52 /* HexToaster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = HexToaster.entitlements; path = HexToaster/HexToaster.entitlements; sourceTree = SOURCE_ROOT; };
 		8240AEF505C4D1FF00373CDF /* libgmp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libgmp.a; path = /usr/local/lib/libgmp.a; sourceTree = "<absolute>"; };
-		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = HexToaster/Info.plist; sourceTree = SOURCE_ROOT; };
 		8D1107320486CEB800E47090 /* HexToaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HexToaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -223,7 +223,8 @@
 				089C165DFE840E0CC02AAC07 /* English */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
+			path = HexToaster;
+			sourceTree = SOURCE_ROOT;
 		};
 		8206408705C4498F00AD0F0B /* MainMenu.nib */ = {
 			isa = PBXVariantGroup;
@@ -231,7 +232,8 @@
 				8206408805C4498F00AD0F0B /* English */,
 			);
 			name = MainMenu.nib;
-			sourceTree = "<group>";
+			path = HexToaster;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXVariantGroup section */
 
@@ -250,11 +252,11 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = HexToaster_Prefix.pch;
+				GCC_PREFIX_HEADER = HexToaster/HexToaster_Prefix.pch;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HexToaster/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
@@ -284,11 +286,11 @@
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = HexToaster_Prefix.pch;
+				GCC_PREFIX_HEADER = HexToaster/HexToaster_Prefix.pch;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HexToaster/Info.plist";
 				LIBRARY_STYLE = STATIC;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "";
@@ -316,11 +318,11 @@
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = HexToaster_Prefix.pch;
+				GCC_PREFIX_HEADER = HexToaster/HexToaster_Prefix.pch;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HexToaster/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
