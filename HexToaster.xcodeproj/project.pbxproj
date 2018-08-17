@@ -15,7 +15,6 @@
 		8206410A05C47B7B00AD0F0B /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8206410905C47B7B00AD0F0B /* Credits.rtf */; };
 		8206410C05C4841C00AD0F0B /* HTIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 8206410B05C4841C00AD0F0B /* HTIcon.icns */; };
 		8206C08605C4CE3800D3EDA3 /* COPYING.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8206C08505C4CE3800D3EDA3 /* COPYING.txt */; };
-		8240AEF605C4D1FF00373CDF /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8240AEF505C4D1FF00373CDF /* libgmp.a */; };
 		8D1107280486CEB800E47090 /* HexToaster_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32CA4F630368D1EE00C91783 /* HexToaster_Prefix.pch */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -38,7 +37,6 @@
 		8206410B05C4841C00AD0F0B /* HTIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = HTIcon.icns; path = HexToaster/HTIcon.icns; sourceTree = SOURCE_ROOT; };
 		8206C08505C4CE3800D3EDA3 /* COPYING.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = COPYING.txt; sourceTree = "<group>"; };
 		82131722212639D5006D1E52 /* HexToaster.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = HexToaster.entitlements; path = HexToaster/HexToaster.entitlements; sourceTree = SOURCE_ROOT; };
-		8240AEF505C4D1FF00373CDF /* libgmp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; name = libgmp.a; path = /usr/local/lib/libgmp.a; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = HexToaster/Info.plist; sourceTree = SOURCE_ROOT; };
 		8D1107320486CEB800E47090 /* HexToaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HexToaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -49,7 +47,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
-				8240AEF605C4D1FF00373CDF /* libgmp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +56,6 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8240AEF505C4D1FF00373CDF /* libgmp.a */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -245,13 +241,11 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COPY_PHASE_STRIP = NO;
-				DEBUGGING_SYMBOLS = YES;
 				DEVELOPMENT_TEAM = 7D3K4AUUW9;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_ENABLE_TRIGRAPHS = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = HexToaster/HexToaster_Prefix.pch;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = NO;
@@ -260,7 +254,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/HexToaster/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = /Users/jasonk/projects/root/lib/libgmp.a;
 				PRODUCT_BUNDLE_IDENTIFIER = org.toast442.HexToaster;
 				PRODUCT_NAME = HexToaster;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -271,7 +265,6 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
 			};
 			name = Development;
 		};
@@ -293,10 +286,9 @@
 				GCC_WARN_FOUR_CHARACTER_CONSTANTS = NO;
 				GCC_WARN_UNKNOWN_PRAGMAS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/HexToaster/Info.plist";
-				LIBRARY_STYLE = STATIC;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = /Users/jasonk/projects/root/lib/libgmp.a;
 				PRODUCT_BUNDLE_IDENTIFIER = org.toast442.HexToaster;
 				PRODUCT_NAME = HexToaster;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -307,7 +299,6 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
 			};
 			name = Deployment;
 		};
@@ -328,7 +319,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/HexToaster/Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
+				OTHER_LDFLAGS = /Users/jasonk/projects/root/lib/libgmp.a;
 				PRODUCT_BUNDLE_IDENTIFIER = org.toast442.HexToaster;
 				PRODUCT_NAME = HexToaster;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -339,7 +330,6 @@
 					"-Wno-unknown-pragmas",
 				);
 				WRAPPER_EXTENSION = app;
-				ZERO_LINK = NO;
 			};
 			name = Default;
 		};
@@ -347,8 +337,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
-				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				HEADER_SEARCH_PATHS = /Users/jasonk/projects/root/include;
+				LIBRARY_SEARCH_PATHS = /Users/jasonk/projects/root/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
@@ -359,8 +349,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
-				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				HEADER_SEARCH_PATHS = /Users/jasonk/projects/root/include;
+				LIBRARY_SEARCH_PATHS = /Users/jasonk/projects/root/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
@@ -371,8 +361,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD)";
-				HEADER_SEARCH_PATHS = /usr/local/include;
-				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				HEADER_SEARCH_PATHS = /Users/jasonk/projects/root/include;
+				LIBRARY_SEARCH_PATHS = /Users/jasonk/projects/root/lib;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				SDKROOT = macosx;
 				VALID_ARCHS = x86_64;
