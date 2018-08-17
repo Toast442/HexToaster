@@ -51,7 +51,7 @@
 	int length;
 	int i;
 	
-	buf = [ partialString lossyCString ];
+	buf = [ partialString UTF8String ];
 	
 	length = strlen(buf);
 	

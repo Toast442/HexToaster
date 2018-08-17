@@ -88,7 +88,7 @@ NSString * labels[] = { 0, @"ASCII", @"Binary", 0, 0, 0, 0, 0, @"Octal",
 		// that can happen in the loop. No sense waiting until program exit for memory deallocation.
 		p = [[ NSAutoreleasePool alloc ] init];
 
-		buf = [ text lossyCString ];
+		buf = [ text UTF8String ];
 		count = strlen(buf);
 	
 		for(i=0; i< count; i++) {
@@ -105,7 +105,7 @@ NSString * labels[] = { 0, @"ASCII", @"Binary", 0, 0, 0, 0, 0, @"Octal",
 		oldBase = 16;
 	}
 
-	mpz_set_str(num,[ text lossyCString ],oldBase);
+	mpz_set_str(num,[ text UTF8String ],oldBase);
 	buf = mpz_get_str(NULL, newBase == HT_ASCII ? 16 : newBase, num);
 
 	if(newBase == HT_ASCII) {
@@ -113,15 +113,12 @@ NSString * labels[] = { 0, @"ASCII", @"Binary", 0, 0, 0, 0, 0, @"Octal",
 		unichar bb;
 		int count;
 		int value;
-		NSAutoreleasePool * p;
-		
+
 		count = strlen(buf);
 		b = buf;
 		value = 0;
 		
-		p = [[ NSAutoreleasePool alloc ] init ];
-		
-		str = [[ NSString alloc] init ];
+		str = [[[ NSString alloc] init ] autorelease];
 		
 		while(*b) {
 			value = 0;
@@ -138,18 +135,13 @@ NSString * labels[] = { 0, @"ASCII", @"Binary", 0, 0, 0, 0, 0, @"Octal",
 
 			str = [ str stringByAppendingString: [ NSString stringWithCharacters:(const unichar*)&bb length: 1 ]];
 		}
-
-		[ str retain ];
-		[ p release ];
 	} else {
-		str = [[ NSString alloc ] initWithCString: buf ];
+		str = [NSString stringWithUTF8String: buf ];
 	}
 	
 	free(buf);
 
-	[ str autorelease ];
-
-	return str;
+    return str;
 }
 
 // Called when one of the pop-up buttons is changed. We need to update the appropriate text field
@@ -235,10 +227,10 @@ NSString * labels[] = { 0, @"ASCII", @"Binary", 0, 0, 0, 0, 0, @"Octal",
 	mpz_init(op2);
 	mpz_init(result);
 	
-	mpz_set_str(op1,[[ baseField6 stringValue ] lossyCString ], 
+	mpz_set_str(op1,[[ baseField6 stringValue ] UTF8String ],
 		[[ formatterArray objectAtIndex: 5 ] getBase ] );
 		
-	mpz_set_str(op2,[[ baseField7 stringValue ] lossyCString ], 
+	mpz_set_str(op2,[[ baseField7 stringValue ] UTF8String ],
 		[[ formatterArray objectAtIndex: 6 ] getBase ] );
 
 	calcMode = [ functionMatrix selectedColumn ];
@@ -257,7 +249,7 @@ NSString * labels[] = { 0, @"ASCII", @"Binary", 0, 0, 0, 0, 0, @"Octal",
 	}
 
 	buf = mpz_get_str(NULL, 10, result);
-	str = [ NSString stringWithCString: buf ];
+	str = [ NSString stringWithUTF8String: buf ];
 	free(buf); 
 	
 	[ baseField8 setStringValue: [ self convertToBase: [[ formatterArray objectAtIndex: 7 ] getBase ]
@@ -354,16 +346,16 @@ NSString * labels[] = { 0, @"ASCII", @"Binary", 0, 0, 0, 0, 0, @"Octal",
 
 - (void)dealloc
 {
-	[ fieldArray release ];
+    [ fieldArray release ];
 	[ menuArray release ];
 	[ formatterArray release ];
 	[ prefs release ];
+    [super dealloc];
 }
 
 - (void)windowWillClose:(NSNotification *)aNotification
 {
 	[ NSApp stop: self ];
-	[ self dealloc ];
 }
 
 - (IBAction) setMode:(int) mode with:(id) sender
