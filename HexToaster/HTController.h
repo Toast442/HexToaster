@@ -44,8 +44,6 @@
 
 @interface HTController : NSObject
 {
-    NSMutableArray * fieldArray;
-    NSMutableArray * menuArray;
     NSMutableArray * formatterArray;
 
     NSUserDefaults * prefs;
@@ -87,5 +85,6 @@
 -(void)controlTextDidChange:(NSNotification *)aNotification;
 -(void)windowWillClose:(NSNotification *)aNotification;
 -(void)windowDidBecomeMain:(NSNotification *)aNotification;
-
+@property(nonatomic, retain) NSArray * fieldArray;
+@property(nonatomic, retain) NSArray * menuArray;
 @end

@@ -51,6 +51,7 @@ NSString * labels[] = { 0, @"ASCII",   @"Binary", 0, 0, 0, 0, 0,      @"Octal",
     [p setObject:@"Binary" forKey:@"baseMenu6"];
     [p setObject:@"Binary" forKey:@"baseMenu7"];
     [p setObject:@"Binary" forKey:@"baseMenu8"];
+    [p setObject:[NSNumber numberWithBool:NO] forKey:@"lowercaseString"];
     [p setValue:[NSNumber numberWithInt:HT_BASIC] forKey:@"UIMode"];
     [p setValue:[NSNumber numberWithInt:HT_CALC_AND] forKey:@"calcMode"];
 
@@ -81,13 +82,8 @@ NSString * labels[] = { 0, @"ASCII",   @"Binary", 0, 0, 0, 0, 0,      @"Octal",
         int count;
         const char * buf;
         NSString * s;
-        NSAutoreleasePool * p;
 
-        s = [[NSString alloc] init];
-
-        // We'll allocate our own autorelease pool here to handle the massive object creating
-        // that can happen in the loop. No sense waiting until program exit for memory deallocation.
-        p = [[NSAutoreleasePool alloc] init];
+        s = [[[NSString alloc] init] autorelease];
 
         buf = [text UTF8String];
         count = strlen(buf);
@@ -96,13 +92,8 @@ NSString * labels[] = { 0, @"ASCII",   @"Binary", 0, 0, 0, 0, 0,      @"Octal",
             s = [s stringByAppendingFormat:@"%02x", buf[i]];
         }
 
-        [s retain];
-        // Release the pool. We've retained s so it will stick around a little longer.
-        [p release];
         // Ok, set text
         text = [NSString stringWithString:s];
-        // Now release s - we're done with it.
-        [s release];
         oldBase = 16;
     }
 
@@ -138,6 +129,9 @@ NSString * labels[] = { 0, @"ASCII",   @"Binary", 0, 0, 0, 0, 0,      @"Octal",
         }
     } else {
         str = [NSString stringWithUTF8String:buf];
+        if(NO == [[prefs objectForKey:@"lowercaseString"] boolValue]) {
+            str = [str uppercaseString];
+        }
     }
 
     free(buf);
@@ -156,14 +150,14 @@ NSString * labels[] = { 0, @"ASCII",   @"Binary", 0, 0, 0, 0, 0,      @"Octal",
     HTFormatter * formatter;
     NSTextField * field;
 
-    index = [menuArray indexOfObject:sender];
+    index = [self.menuArray indexOfObject:sender];
 
     if(index == NSNotFound) {
         return;
     }
 
     formatter = [formatterArray objectAtIndex:index];
-    field = [fieldArray objectAtIndex:index];
+    field = [self.fieldArray objectAtIndex:index];
 
     oldBase = [formatter getBase];
 
@@ -192,12 +186,12 @@ NSString * labels[] = { 0, @"ASCII",   @"Binary", 0, 0, 0, 0, 0,      @"Octal",
 
     NSString * str;
 
-    count = [fieldArray count];
+    count = [self.fieldArray count];
 
     field = [aNotification object];
     str = [field stringValue];
 
-    index = [fieldArray indexOfObject:field];
+    index = [self.fieldArray indexOfObject:field];
     base = [[formatterArray objectAtIndex:index] getBase];
 
     // Loop through the fields, and update them with the new value taken from the
@@ -210,7 +204,7 @@ NSString * labels[] = { 0, @"ASCII",   @"Binary", 0, 0, 0, 0, 0,      @"Octal",
 
         newBase = [[formatterArray objectAtIndex:i] getBase];
 
-        [[fieldArray objectAtIndex:i] setStringValue:
+        [[self.fieldArray objectAtIndex:i] setStringValue:
          [self convertToBase:newBase fromBase:base usingText:str]];
     }
 
@@ -277,35 +271,21 @@ NSString * labels[] = { 0, @"ASCII",   @"Binary", 0, 0, 0, 0, 0,      @"Octal",
     NSPopUpButton * menu;
     HTFormatter * formatter;
 
-    fieldArray = [[NSMutableArray alloc] init];
-    menuArray = [[NSMutableArray alloc] init];
+    self.fieldArray = @[baseField1, baseField2, baseField3, baseField4,
+                        baseField5, baseField6, baseField7, baseField8];
+
+    self.menuArray = @[baseMenu1, baseMenu2, baseMenu3, baseMenu4,
+                       baseMenu5, baseMenu6, baseMenu7, baseMenu8];
+
     formatterArray = [[NSMutableArray alloc] init];
 
-    [fieldArray addObject:baseField1];
-    [fieldArray addObject:baseField2];
-    [fieldArray addObject:baseField3];
-    [fieldArray addObject:baseField4];
-    [fieldArray addObject:baseField5];
-    [fieldArray addObject:baseField6];
-    [fieldArray addObject:baseField7];
-    [fieldArray addObject:baseField8];
-
-    [menuArray addObject:baseMenu1];
-    [menuArray addObject:baseMenu2];
-    [menuArray addObject:baseMenu3];
-    [menuArray addObject:baseMenu4];
-    [menuArray addObject:baseMenu5];
-    [menuArray addObject:baseMenu6];
-    [menuArray addObject:baseMenu7];
-    [menuArray addObject:baseMenu8];
-
-    count = [menuArray count];
+    count = [self.menuArray count];
 
 
     for(i = 0; i < count; i++) {
 
-        field = [fieldArray objectAtIndex:i];
-        menu = [menuArray objectAtIndex:i];
+        field = [self.fieldArray objectAtIndex:i];
+        menu = [self.menuArray objectAtIndex:i];
         formatter = [[HTFormatter alloc] init];
 
         [menu removeAllItems];
@@ -333,13 +313,12 @@ NSString * labels[] = { 0, @"ASCII",   @"Binary", 0, 0, 0, 0, 0,      @"Octal",
 
     for(i = 0; i < count; i++ ) {
         NSString * s;
-        menu = [menuArray objectAtIndex:i];
-        s = [[NSString alloc] initWithFormat:@"baseMenu%d", i + 1];
+        menu = [self.menuArray objectAtIndex:i];
+        s = [NSString stringWithFormat:@"baseMenu%d", i + 1];
         [menu selectItemWithTitle:[prefs stringForKey:s]];
-        [s release];
 
         [self baseChanged:menu];
-        [[fieldArray objectAtIndex:i] setStringValue:@""];
+        [[self.fieldArray objectAtIndex:i] setStringValue:@""];
     }
 
     calcMode = [prefs integerForKey:@"calcMode"];
@@ -350,8 +329,9 @@ NSString * labels[] = { 0, @"ASCII",   @"Binary", 0, 0, 0, 0, 0,      @"Octal",
 
 -(void)dealloc
 {
-    [fieldArray release];
-    [menuArray release];
+    self.fieldArray = nil;
+    self.menuArray = nil;
+
     [formatterArray release];
     [prefs release];
     [super dealloc];
